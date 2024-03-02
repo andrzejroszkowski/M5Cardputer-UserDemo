@@ -106,11 +106,11 @@ void sntp_warp_init(void)
     ESP_LOGI(TAG, "The current date/time in New York is: %s", strftime_buf);
 
     // Set timezone to China Standard Time
-    setenv("TZ", "CST-8", 1);
+    setenv("TZ", "UTC-1", 1);
     tzset();
     localtime_r(&now, &timeinfo);
     strftime(strftime_buf, sizeof(strftime_buf), "%c", &timeinfo);
-    ESP_LOGI(TAG, "The current date/time in Shanghai is: %s", strftime_buf);
+    ESP_LOGI(TAG, "The current date/time in Warsaw is: %s", strftime_buf);
 
     if (sntp_get_sync_mode() == SNTP_SYNC_MODE_SMOOTH) {
         struct timeval outdelta;
