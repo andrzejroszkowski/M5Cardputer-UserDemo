@@ -1,34 +1,27 @@
 /*
 	Button - a small library for Arduino to handle button debouncing
-	
+
 	MIT licensed.
 */
 
 #include "Button.h"
-// #include <Arduino.h>
 #include <driver/gpio.h>
 #include "../../apps/utils/common_define.h"
 
 Button::Button(uint8_t pin, uint16_t debounce_ms)
-:  _pin(pin)
-,  _delay(debounce_ms)
-,  _state(true)
-,  _ignore_until(0)
-,  _has_changed(false)
+	: _pin(pin), _delay(debounce_ms), _state(true), _ignore_until(0), _has_changed(false)
 {
 }
 
 void Button::begin()
 {
-	// pinMode(_pin, INPUT_PULLUP);
-
 	gpio_set_direction((gpio_num_t)_pin, GPIO_MODE_INPUT);
 	gpio_set_pull_mode((gpio_num_t)_pin, GPIO_PULLUP_ONLY);
 }
 
-// 
+//
 // public methods
-// 
+//
 
 bool Button::read()
 {
@@ -37,16 +30,15 @@ bool Button::read()
 	{
 		// ignore any changes during this period
 	}
-	
-	// pin has changed 
-	// else if (digitalRead(_pin) != _state)
+
+	// pin has changed
 	else if (gpio_get_level((gpio_num_t)_pin) != _state)
 	{
 		_ignore_until = millis() + _delay;
 		_state = !_state;
 		_has_changed = true;
 	}
-	
+
 	return _state;
 }
 
