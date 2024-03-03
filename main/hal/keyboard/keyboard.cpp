@@ -10,14 +10,12 @@
  */
 #include "keyboard.h"
 #include <driver/gpio.h>
-
+#include <cstring>
 
 #define digitalWrite(pin, level) gpio_set_level((gpio_num_t)pin, level)
 #define digitalRead(pin) gpio_get_level((gpio_num_t)pin)
 
-
 using namespace KEYBOARD;
-
 
 void Keyboard::_set_output(const std::vector<int>& pinList, uint8_t output)
 {
@@ -27,7 +25,6 @@ void Keyboard::_set_output(const std::vector<int>& pinList, uint8_t output)
     digitalWrite(pinList[1], (output & 0B00000010));
     digitalWrite(pinList[2], (output & 0B00000100));
 }
-
 
 uint8_t Keyboard::_get_input(const std::vector<int>& pinList)
 {
@@ -44,23 +41,8 @@ uint8_t Keyboard::_get_input(const std::vector<int>& pinList)
     return buffer;
 }
 
-
 void Keyboard::init()
 {
-    // for (auto i : output_list) {
-    //     gpio_reset_pin((gpio_num_t)i);
-    //     pinMode(i, OUTPUT);
-    //     digitalWrite(i, 0);
-    // }
-
-    // for (auto i : input_list) {
-    //     gpio_reset_pin((gpio_num_t)i);
-    //     pinMode(i, INPUT_PULLUP);
-    // }
-
-    // _set_output(output_list, 0);
-
-
     for (auto i : output_list) 
     {
         gpio_reset_pin((gpio_num_t)i);
@@ -79,7 +61,6 @@ void Keyboard::init()
     _set_output(output_list, 0);
 }
 
-
 Point2D_t Keyboard::getKey()
 {
     Point2D_t coor;
@@ -90,7 +71,6 @@ Point2D_t Keyboard::getKey()
 
     for (int i = 0; i < 8; i++) {
         _set_output(output_list, i);
-        // printf("% 3d,\t", get_input(inputList));
 
         input_value = _get_input(input_list);
 
@@ -112,15 +92,12 @@ Point2D_t Keyboard::getKey()
             coor.y = -coor.y;
             coor.y = coor.y + 3;
 
-
             break;
         }
     }
 
-    // printf("%d,%d\n", x, y);
     return coor;
 }
-
 
 uint8_t Keyboard::getKeyNum(Point2D_t keyCoor)
 {
@@ -135,11 +112,9 @@ uint8_t Keyboard::getKeyNum(Point2D_t keyCoor)
     return ret;
 }
 
-
 void Keyboard::updateKeyList()
 {
     _key_list_buffer.clear();
-
 
     Point2D_t coor;
 
@@ -147,7 +122,6 @@ void Keyboard::updateKeyList()
 
     for (int i = 0; i < 8; i++) {
         _set_output(output_list, i);
-        // printf("% 3d,\t", get_input(inputList));
 
         input_value = _get_input(input_list);
         
@@ -155,25 +129,14 @@ void Keyboard::updateKeyList()
         /* If key pressed */
         if (input_value) {
 
-            // printf("c: ");
-            
             /* Get X */
             for (int j = 0; j < 7; j++) {
-
-                // if (input_value == X_map_chart[j].value) {
-                //     coor.x = (i > 3) ? X_map_chart[j].x_1 : X_map_chart[j].x_2;
-                //     break;
-                // }
-
-
 
                 if (input_value & (0x01 << j)) {
                     coor.x = (i > 3) ? X_map_chart[j].x_1 : X_map_chart[j].x_2;
                 
                     /* Get Y */
                     coor.y = (i > 3) ? (i - 4) : i;
-                    // printf("%d,%d\t", coor.x, coor.y); 
-
 
                     /* Keep the same as picture */
                     coor.y = -coor.y;
@@ -181,19 +144,10 @@ void Keyboard::updateKeyList()
 
                     _key_list_buffer.push_back(coor);
                 }
-
-
             }
-
-            // printf("\n");
-
-
-            // /* Get Y */
-            // coor.y = (i > 3) ? (i - 4) : i;
         }
     }
 }
-
 
 bool Keyboard::isKeyPressing(int keyNum)
 {
@@ -207,9 +161,6 @@ bool Keyboard::isKeyPressing(int keyNum)
     }
     return false;
 }
-
-
-#include <cstring>
 
 void Keyboard::updateKeysState()
 {
@@ -293,7 +244,6 @@ void Keyboard::updateKeysState()
         }
     }
 }
-
 
 bool Keyboard::isChanged() 
 {

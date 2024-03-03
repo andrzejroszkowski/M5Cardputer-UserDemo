@@ -13,7 +13,6 @@
 #include <vector>
 #include "keymap.h"
 
-
 namespace KEYBOARD 
 {
     struct Chart_t 
@@ -31,7 +30,6 @@ namespace KEYBOARD
 
     const std::vector<int> output_list = {8, 9, 11};
     const std::vector<int> input_list = {13, 15, 3, 4, 5, 6, 7};
-    // const std::vector<int> input_list = {1, 2, 3, 4, 5, 6, 7};
 
     const Chart_t X_map_chart[7] = 
     {
@@ -113,7 +111,6 @@ namespace KEYBOARD
     class Keyboard
     {
         public:
-            
             struct KeysState
             {
                 bool tab = false;
@@ -146,7 +143,6 @@ namespace KEYBOARD
                 }
             };
 
-
         private:
             std::vector<Point2D_t> _key_list_buffer;
 
@@ -159,7 +155,6 @@ namespace KEYBOARD
 
             void _set_output(const std::vector<int>& pinList, uint8_t output);
             uint8_t _get_input(const std::vector<int>& pinList);
-
 
         public:
             Keyboard() : 
