@@ -241,3 +241,5 @@ CONFIG_ESPNOW_DEBUG_CONSOLE_UART_NUM=0
 #
 # end of TinyUSB soucre
 # end of Component config
+
+CONFIG_SOC_LEDC_SUPPORT_APB_CLOCK=y
