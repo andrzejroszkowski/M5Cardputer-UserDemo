@@ -19,6 +19,7 @@ extern "C" {
 #endif
 
 #include "esp_err.h"
+#include <stdbool.h>
 
 #define IR_TOOLS_FLAGS_PROTO_EXT (1 << 0) /*!< Enable Extended IR protocol */
 #define IR_TOOLS_FLAGS_INVERSE (1 << 1)   /*!< Inverse the IR signal, i.e. take high level as low, and vice versa */
