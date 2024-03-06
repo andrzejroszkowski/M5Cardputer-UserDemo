@@ -53,7 +53,7 @@ static BleKbWrapState_t _keyboard_current_state =  ble_kb_wrap_state_wait_connec
 static const char *TAG = "HID_DEV_DEMO";
 
 typedef struct {
-    xTaskHandle task_hdl;
+    TaskHandle_t task_hdl;
     esp_hidd_dev_t *hid_dev;
     uint8_t protocol_mode;
     uint8_t *buffer;
