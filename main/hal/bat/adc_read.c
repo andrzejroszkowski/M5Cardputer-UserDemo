@@ -46,7 +46,6 @@ static int adc_raw[2][10];
 static const char *TAG = "ADC SINGLE";
 
 static esp_adc_cal_characteristics_t adc1_chars;
-static esp_adc_cal_characteristics_t adc2_chars;
 
 static bool adc_calibration_init(void)
 {
@@ -95,7 +94,7 @@ uint32_t adc_read_get_value()
     if (cali_enable)
     {
         voltage = esp_adc_cal_raw_to_voltage(adc_raw[0][0], &adc1_chars);
-        ESP_LOGI(TAG_CH[0][0], "cali data: %d mV", voltage);
+        ESP_LOGI(TAG_CH[0][0], "cali data: %lu mV", voltage);
     }
 
     return voltage;
