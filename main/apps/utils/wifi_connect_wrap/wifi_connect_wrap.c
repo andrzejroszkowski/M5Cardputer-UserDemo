@@ -113,7 +113,7 @@ static uint8_t _connect_retry_count = 0;
 #endif
 
 static int s_active_interfaces = 0;
-static xSemaphoreHandle s_semph_get_ip_addrs;
+static SemaphoreHandle_t s_semph_get_ip_addrs;
 static esp_netif_t *s_example_esp_netif = NULL;
 
 #ifdef CONFIG_EXAMPLE_CONNECT_IPV6
