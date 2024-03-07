@@ -73,7 +73,6 @@ void pikaGC_markObj(PikaGC* gc, PikaObj* self);
 void _pikaGC_mark(PikaGC* gc);
 void obj_dump(PikaObj* self);
 void Locals_deinit(PikaObj* self);
-static void disable_raw_mode(void);
 
 static enum shellCTRL __obj_shellLineHandler_REPL(PikaObj* self,
                                                   char* input_line,
