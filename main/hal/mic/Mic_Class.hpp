@@ -9,11 +9,7 @@
 #include <freertos/task.h>
 #include <soc/i2s_struct.h>
 
-#if __has_include(<driver/i2s_std.h>)
- #include <driver/i2s_std.h>
-#else
- #include <driver/i2s.h>
-#endif
+#include <driver/i2s_std.h>
 
 #ifndef I2S_PIN_NO_CHANGE
 #define I2S_PIN_NO_CHANGE (-1)

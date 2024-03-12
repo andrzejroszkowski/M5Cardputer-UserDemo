@@ -1,0 +1,161 @@
+PS C:\SabreDeveloper\amr\M5Cardputer-UserDemo> set IDF_PATH=C:\SabreDeveloper\esp\v5.0.6\esp-idf
+PS C:\SabreDeveloper\amr\M5Cardputer-UserDemo> C:\SabreDeveloper\tools\esp50\python_env\idf5.0_py3.11_env\Scripts\python.exe C:\SabreDeveloper\esp\v5.0.6\esp-idf\tools\idf_monitor.py -p COM4 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 c:\SabreDeveloper\amr\M5Cardputer-UserDemo\build\cardputer.elf
+--- WARNING: GDB cannot open serial ports accessed as COMx
+--- Using \\.\COM4 instead...
+--- idf_monitor on \\.\COM4 115200 ---
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---
+I (327) esp_image: segment 1: paddr=0016e3c4 vaddr=3fc9cfESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2b (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4205b350
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce3808,len:0x1820
+load:0x403c9700,len:0xe80
+load:0x403cc700,len:0x3110
+entry 0x403c9980
+I (24) boot: ESP-IDF v4.4.7 2nd stage bootloader
+I (24) boot: compile time 17:54:26
+I (25) boot: Multicore bootloader
+I (26) boot: chip revision: v0.2
+I (30) qio_mode: Enabling default flash chip QIO
+I (36) boot.esp32s3: Boot SPI Speed : 80MHz
+I (41) boot.esp32s3: SPI Mode       : QIO
+I (45) boot.esp32s3: SPI Flash Size : 8MB
+I (50) boot: Enabling RNG early entropy source...
+I (55) boot: Partition Table:
+I (59) boot: ## Label            Usage          Type ST Offset   Length
+I (66) boot:  0 nvs              WiFi data        01 02 00009000 00005000
+I (74) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (81) boot:  2 factory          factory app      00 00 00010000 00400000
+I (89) boot:  3 storage          Unknown data     01 81 00410000 00100000
+I (96) boot: End of partition table
+I (100) esp_image: segment 0: paddr=00010020 vaddr=3c170020 size=15e39ch (1434524) map
+I (326) esp_image: segment 1: paddr=0016e3c4 vaddr=3fc9cfe0 size=01c54h (  7252) load
+I (328) esp_image: segment 2: paddr=00170020 vaddr=42000020 size=16a040h (1482816) map
+I (557) esp_image: segment 3: paddr=002da068 vaddr=3fc9ec34 size=02c68h ( 11368) load
+I (559) esp_image: segment 4: paddr=002dccd8 vaddr=40374000 size=18fd4h (102356) load
+I (582) esp_image: segment 5: paddr=002f5cb4 vaddr=50000000 size=00004h (     4) load
+I (592) boot: Loaded app from partition at offset 0x10000
+I (593) boot: Disabling RNG early entropy source...
+I (604) cpu_start: Multicore app
+I (604) cpu_start: Pro cpu up.
+I (604) cpu_start: Starting app cpu, entry point is 0x403755d0
+I (0) cpu_start: App cpu up.
+I (622) cpu_start: Pro cpu start user code
+I (622) cpu_start: cpu freq: 160000000
+I (622) cpu_start: Application information:
+I (625) cpu_start: Project name:     cardputer
+I (630) cpu_start: App version:      9fd3ed0
+I (635) cpu_start: Compile time:     Mar  3 2024 22:39:32
+I (641) cpu_start: ELF file SHA256:  2132069623fa8489...
+I (647) cpu_start: ESP-IDF:          v4.4.7
+I (652) cpu_start: Min chip rev:     v0.0
+I (656) cpu_start: Max chip rev:     v0.99
+I (661) cpu_start: Chip rev:         v0.2
+I (666) heap_init: Initializing. RAM available for dynamic allocation:
+I (673) heap_init: At 3FCA86D8 len 00041038 (260 KiB): D/IRAM
+I (679) heap_init: At 3FCE9710 len 00005724 (21 KiB): STACK/DIRAM
+I (686) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+I (692) heap_init: At 600FE000 len 00002000 (8 KiB): RTCRAM
+I (699) spi_flash: detected chip: gd
+I (703) spi_flash: flash io: qio
+I (709) sleep: Configure to isolate all GPIO pins in sleep state
+I (714) sleep: Enable automatic switching of GPIO sleep configuration
+I (721) coexist: coexist rom version e7ae62f
+I (726) cpu_start: Starting scheduler on PRO CPU.
+I (0) cpu_start: Starting scheduler on APP CPU.
+[1970-01-01 06:19:26.111] [info] hal init
+[1970-01-01 06:19:26.114] [info] init display
+I (1183) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 
+I (1183) gpio: GPIO[9]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0
+I (1191) gpio: GPIO[11]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 
+I (1200) gpio: GPIO[13]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0
+I (1209) gpio: GPIO[15]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 
+I (1219) gpio: GPIO[3]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0
+I (1228) gpio: GPIO[4]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 
+I (1237) gpio: GPIO[5]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 
+I (1247) gpio: GPIO[6]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0
+I (1256) gpio: GPIO[7]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 
+[1970-01-01 06:19:26.414] [info] init speaker
+[1970-01-01 06:19:26.418] [info] init mic
+[1970-01-01 06:19:26.422] [info] mooncake init :)
+[1970-01-01 06:19:26.426] [info] create userdata
+[1970-01-01 06:19:26.430] [info] start db setup
+[1970-01-01 06:19:26.434] [info] call db setup callback
+[1970-01-01 06:19:26.439] [info] hal injection: cardputer
+[1970-01-01 06:19:26.444] [info] create boot anim
+[1970-01-01 06:19:26.449] [info] start boot anim
+
+ _____ _____ _____ _____ _____ _____ _____ _____
+|     |     |     |   | |     |  _  |  |  |   __|
+| | | |  |  |  |  | | | |   --|     |    -|   __|
+|_|_|_|_____|_____|_|___|_____|__|__|__|__|_____|
+
+- @author Forairaaaaa
+- @version v0.2.0
+- @build at 21:53:31 Mar  3 2024
+
+[1970-01-01 06:19:26.478] [info] init done
+[1970-01-01 06:19:26.482] [info] Launcher onCreate
+[1970-01-01 06:19:26.486] [info] start boot anim
+[1970-01-01 06:19:26.491] [info] start menu
+[1970-01-01 06:19:26.495] [info] installed apps num: 11
+[1970-01-01 06:19:26.499] [info] app: Launcher icon: 0x0
+[1970-01-01 06:19:26.504] [info] app: SCAN icon: 0x3fceb6e8
+[1970-01-01 06:19:26.510] [info] app: RECORD icon: 0x3fceb75c
+[1970-01-01 06:19:26.515] [info] app: CHAT icon: 0x3fceb74c
+[1970-01-01 06:19:26.521] [info] app: REMOTE icon: 0x3fceb7c0
+[1970-01-01 06:19:26.526] [info] app: REPL icon: 0x3fceb88c
+[1970-01-01 06:19:26.531] [info] app: SetWiFi icon: 0x3fceb824
+[1970-01-01 06:19:26.537] [info] app: TIMER icon: 0x3fceb968
+[1970-01-01 06:19:26.542] [info] app: KEYBOARD icon: 0x3fceb9cc
+[1970-01-01 06:19:26.548] [info] app: NOTEPAD icon: 0x3fceba30
+[1970-01-01 06:19:26.553] [info] app: HELLO icon: 0x3fceb8f0
+I (1426) ADC1_CH2: raw  data: 2467
+I (1427) ADC1_CH2: cali data: 2047 mV
+[1970-01-01 06:19:26.575] [info] batV: 4.094
+[1970-01-01 06:19:26.576] [info] get bat level: 75
+I (5404) I2S: DMA Malloc info, datalen=blocksize=512, dma_buf_count=8
+[1970-01-01 06:19:30.756] [info] select: 2 try create
+[1970-01-01 06:19:30.757] [info] RECORD onCreate
+[1970-01-01 06:19:30.757] [info] addr: 0x3fcec814
+I (5789) I2S: DMA Malloc info, datalen=blocksize=128, dma_buf_count=4
+I (5796) I2S: DMA queue destroyed
+I (5797) I2S: DMA Malloc info, datalen=blocksize=128, dma_buf_count=4
+I (6634) ADC1_CH2: raw  data: 2461
+I (6634) ADC1_CH2: cali data: 2043 mV
+[1970-01-01 06:19:31.783] [info] batV: 4.086
+[1970-01-01 06:19:31.784] [info] get bat level: 75
+I (11698) ADC1_CH2: raw  data: 2460
+I (11698) ADC1_CH2: cali data: 2043 mV
+[1970-01-01 06:19:36.847] [info] batV: 4.086
+[1970-01-01 06:19:36.848] [info] get bat level: 75
+I (16760) ADC1_CH2: raw  data: 2461
+I (16760) ADC1_CH2: cali data: 2043 mV
+[1970-01-01 06:19:41.909] [info] batV: 4.086
+[1970-01-01 06:19:41.910] [info] get bat level: 75
+I (21822) ADC1_CH2: raw  data: 2460
+I (21822) ADC1_CH2: cali data: 2043 mV
+[1970-01-01 06:19:46.971] [info] batV: 4.086
+[1970-01-01 06:19:46.972] [info] get bat level: 75
+I (26884) ADC1_CH2: raw  data: 2459
+I (26884) ADC1_CH2: cali data: 2041 mV
+[1970-01-01 06:19:52.033] [info] batV: 4.082
+[1970-01-01 06:19:52.034] [info] get bat level: 75
+I (31948) ADC1_CH2: raw  data: 2459
+I (31948) ADC1_CH2: cali data: 2041 mV
+[1970-01-01 06:19:57.097] [info] batV: 4.082
+[1970-01-01 06:19:57.098] [info] get bat level: 75
+I (37010) ADC1_CH2: raw  data: 2463
+I (37010) ADC1_CH2: cali data: 2045 mV
+[1970-01-01 06:20:02.159] [info] batV: 4.09
+[1970-01-01 06:20:02.160] [info] get bat level: 75
+I (42072) ADC1_CH2: raw  data: 2460
+I (42072) ADC1_CH2: cali data: 2043 mV
+[1970-01-01 06:20:07.221] [info] batV: 4.086
+[1970-01-01 06:20:07.222] [info] get bat level: 75
+I (47134) ADC1_CH2: raw  data: 2463
+I (47134) ADC1_CH2: cali data: 2045 mV
+[1970-01-01 06:20:12.283] [info] batV: 4.09
+[1970-01-01 06:20:12.284] [info] get bat level: 75
