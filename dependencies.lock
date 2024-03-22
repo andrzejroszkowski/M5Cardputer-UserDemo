@@ -15,7 +15,7 @@ dependencies:
     component_hash: null
     source:
       type: idf
-    version: 4.4.6
+    version: 4.4.7
   leeebo/tinyusb_src:
     component_hash: f9d730e3145f97949745e6432a9114c5f114c3bcde273b167ece4de7b9243927
     source:
