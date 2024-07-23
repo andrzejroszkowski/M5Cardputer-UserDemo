@@ -6,22 +6,22 @@ dependencies:
       type: service
     version: 0.5.3
   espressif/esp-now:
-    component_hash: 0a045348feae101ca0cd25e91995cb50e99deb87148858203f7977cd09c33f66
+    component_hash: 5ad630168194ad0134b28194852dda1616a1231680ef477cc6e0fc5eb5fc6233
     source:
       service_url: https://api.components.espressif.com/
       type: service
-    version: 2.5.0
+    version: 2.5.1
   idf:
     component_hash: null
     source:
       type: idf
     version: 4.4.7
   leeebo/tinyusb_src:
-    component_hash: 2d64510f4e8ae0415fd97ba92522611dbf6888f1dac6cdfa7fd893d7ddc74ae7
+    component_hash: f9d730e3145f97949745e6432a9114c5f114c3bcde273b167ece4de7b9243927
     source:
       service_url: https://api.components.espressif.com/
       type: service
-    version: 0.16.0~2
-manifest_hash: ebe28f8e2e1439c81a200ee19b8865658a6234cd92774e31994d1e6cf19a4222
+    version: 0.16.0~4
+manifest_hash: 757ffdd1f72d060667a404560cb6428aa61b2fd425c30f13d51741db70d4bd55
 target: esp32s3
 version: 1.0.0
